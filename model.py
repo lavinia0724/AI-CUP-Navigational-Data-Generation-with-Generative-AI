@@ -261,22 +261,24 @@ class UNext(nn.Module):
 
         self.soft = nn.Softmax(dim=1)
 
-
 #### new ###########
-        self.fit_down = nn.Sequential(nn.Conv2d(3 , 32 , kernel_size=(13,10)),
+        # 240 x 428 做五次的 maxpooling
+        # 240 -> 224 (-16, k 做兩次卷積 總共要 -18), 428 -> 416 (為了符合 2 的五次方) 每做一次捲積會變成 n-k+1
+        self.fit_down = nn.Sequential(nn.Conv2d(3 , 32 , kernel_size=(13,10)), 
                                       nn.Conv2d(32 , 16 , kernel_size=(5,4)))
 
         # self.fit_down = nn.Sequential(nn.Conv2d(3 , 32 , kernel_size=(17,6),stride=(1,2),padding=(0,12)),
         #                               nn.Conv2d(32 , 16 , kernel_size=3, padding=1, stride=1))
+        # 0.68 那一次，但 self.final 只加兩三層捲積層，效果不彰
         
         # self.final = nn.Sequential(nn.Conv2d(16 , 16 , kernel_size=5),
         #                            nn.Conv2d(16 , num_classes , kernel_size=5))
 
 
-        self.final = nn.ModuleList([nn.Conv2d(16 , 16 , kernel_size=3 , padding=1),
+        self.final = nn.ModuleList([nn.Conv2d(16 , 16 , kernel_size=3 , padding=1), 
                                     nn.Conv2d(16 , 16 , kernel_size=3 , padding=1),
-                                    nn.Conv2d(16 , 3 , kernel_size=5),
-                                    nn.Conv2d(3 , 3 , kernel_size=3 , padding=1),
+                                    nn.Conv2d(16 , 3 , kernel_size=5),                # 多擴一點，輸出就不 padding
+                                    nn.Conv2d(3 , 3 , kernel_size=3 , padding=1),     # 做 residual
                                     nn.Conv2d(3 , 3 , kernel_size=3 , padding=1),
                                     nn.Conv2d(3 , 3 , kernel_size=3 , padding=1)])
         

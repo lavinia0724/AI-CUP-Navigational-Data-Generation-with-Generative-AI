@@ -3,7 +3,8 @@
 
 ## Using the code:
 Our code is stable while using Python 3.10.4, CUDA 11.8, PyTorch 2.3.0
-其他需安裝的 Python Package:
+
+其他需安裝的 Python Package 如下:
 ```
 pip install numpy
 pip install opencv-python

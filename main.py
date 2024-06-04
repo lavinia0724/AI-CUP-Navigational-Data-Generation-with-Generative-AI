@@ -34,35 +34,23 @@ optimizer = torch.optim.Adam(model.parameters() , lr = learning_rate)
 
 for epoch in range(max_epoch):
 
-
-        
     data , label = get_data()
 
     # data.shape  [batch_size , 3 , 240 , 428]
     # label.shape [batch_size , 3 , 240 , 428]
 
-
-
     predict = model(data)
 
-
-
     loss = loss_function(predict , label)
-
-
 
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
 
-
-
     with torch.no_grad():
         obsloss = ((predict - label) ** 2).mean()
 
-
     print(f"epoch = {epoch+1} -- loss = {loss.item():.4f} -- obsloss = {obsloss.item():.4f}")
-
 
     if (epoch + 1) % 500 == 0 :
         torch.save(model , "model2.pt")

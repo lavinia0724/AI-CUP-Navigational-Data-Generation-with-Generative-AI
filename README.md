@@ -37,7 +37,7 @@ python main.py
 ```
 
 ## Predict
-使用 training 訓練完的 `model2.pt` 模型<br>
+使用 training 訓練完的 `model1.pt` 模型<br>
 預測 public test dataset
 ```
 python predict_public.py

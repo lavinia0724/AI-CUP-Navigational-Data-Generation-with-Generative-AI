@@ -53,4 +53,4 @@ for epoch in range(max_epoch):
     print(f"epoch = {epoch+1} -- loss = {loss.item():.4f} -- obsloss = {obsloss.item():.4f}")
 
     if (epoch + 1) % 500 == 0 :
-        torch.save(model , "model2.pt")
+        torch.save(model , "model1.pt")

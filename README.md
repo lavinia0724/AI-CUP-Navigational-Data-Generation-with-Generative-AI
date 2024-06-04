@@ -1,6 +1,7 @@
 # AI CUP Navigational Data Generation with Generative AI
 [AI CUP 2024] 以生成式AI建構無人機於自然環境偵察時所需之導航資訊競賽 II － 導航資料生成競賽 TEAM_5137
-組員：吳家萱（隊長）、許中萁、吳建中
+
+組員：吳建中、吳家萱、許中萁
 
 ## Using the code:
 作業系統：Windows11

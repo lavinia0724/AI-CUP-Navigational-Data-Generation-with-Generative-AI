@@ -13,7 +13,7 @@
     └─label_img
 ```
 
-## Using the code:
+## Environment
 作業系統：Windows11<br>
 程式語言：Python 3.10.4<br>
 程式透過 CUDA 11.8 使用 GPU 訓練模型

@@ -4,8 +4,8 @@
 組員：吳建中、吳家萱、許中萁
 
 ## Using the code:
-作業系統：Windows11
-程式語言：Python 3.10.4
+作業系統：Windows11<br>
+程式語言：Python 3.10.4<br>
 程式透過 CUDA 11.8 使用 GPU 訓練模型
 
 其他需安裝的 Python Package 如下:

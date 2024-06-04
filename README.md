@@ -14,3 +14,8 @@ pip install matplotlib
 
 ## Dataset
 [AI CUP 2024 以生成式AI建構無人機於自然環境偵察時所需之導航資訊競賽 II － 導航資料生成競賽](https://tbrain.trendmicro.com.tw/Competitions/Details/35)
+
+## Training
+```
+python main.py
+```
